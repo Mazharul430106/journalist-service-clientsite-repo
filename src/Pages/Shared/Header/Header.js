@@ -22,7 +22,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Jurnalist Services</Link>
+                <Link className=" normal-case text-2xl">Jurnalist Services</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
