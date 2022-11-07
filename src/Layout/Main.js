@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../Pages/Shared/Header/Header';
+import {Outlet} from 'react-router-dom';
 
 const Main = () => {
     return (
         <div>
-            <h1>This is Main Page</h1>
+            <Header></Header>
+            <Outlet></Outlet>
         </div>
     );
 };

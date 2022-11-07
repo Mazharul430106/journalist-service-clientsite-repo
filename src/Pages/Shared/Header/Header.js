@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     const menuItems = <>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Service</a></li>
+        <li><Link to='/home'>Home</Link></li>
+        <li><Link to='/service'>Service</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>
 
     return (
@@ -21,17 +22,14 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Jurnalist Services</a>
+                <Link className="btn btn-ghost normal-case text-xl">Jurnalist Services</Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
 
                     {menuItems}
 
                 </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Get started</a>
             </div>
         </div>
     );
