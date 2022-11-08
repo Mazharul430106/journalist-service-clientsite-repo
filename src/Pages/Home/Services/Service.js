@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     console.log(service)
-    const { service_id, name, img, price, description } = service;
+    const { service_id, _id, name, img, price, description } = service;
     return (
         <div className="card w-96 mx-auto bg-base-100 shadow-xl">
             <figure><img src={img} alt="Shoes" /></figure>
@@ -14,9 +14,9 @@ const Service = ({ service }) => {
                         description.length > 100 ? <p>{description.slice(0, 100)}... <Link className='text-blue-400'>Read More</Link></p> : <></>
                     }
                 </p>
-                <p>Price : {price}</p>
+                <p><span className='font-bold'>Price</span>  : {price}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary text-white">View Details</button>
+                    <Link to={`/service/${_id}`} className="btn btn-primary text-white">View Details</Link>
                 </div>
             </div>
         </div>
