@@ -1,9 +1,13 @@
 import React from 'react';
+import useTitle from '../../Hooks/useTitle';
+import Footer from '../Shared/Footer/Footer';
 
 const Login = () => {
+    useTitle('Login')
+
     return (
         <div>
-            <h1>This is Login Page</h1>
+            <Footer></Footer>
         </div>
     );
 };

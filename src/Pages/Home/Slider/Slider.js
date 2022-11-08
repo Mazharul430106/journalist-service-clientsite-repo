@@ -4,7 +4,7 @@ import image2 from '../../../assets/img2.jpg';
 import image3 from '../../../assets/img3.jpg';
 import image4 from '../../../assets/img4.jpg';
 import Slide from './Slide';
-
+import './Slider.css';
 
 const Slider = () => {
 
@@ -37,7 +37,7 @@ const Slider = () => {
     ]
 
     return (
-        <div className='carousel w-full'>
+        <div className='carousel slider_hight w-full'>
             {
                 sliderItems.map(sliderItem=> <Slide key={sliderItem.id} sliderItem={sliderItem} ></Slide>)
             }
