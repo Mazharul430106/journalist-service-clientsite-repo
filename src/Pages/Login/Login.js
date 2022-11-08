@@ -1,5 +1,7 @@
-import React from 'react';
+import { Result } from 'postcss';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import Footer from '../Shared/Footer/Footer';
 import './Login.css';
@@ -7,12 +9,27 @@ import './Login.css';
 const Login = () => {
     useTitle('Login');
 
+    const {loginUser} = useContext(AuthContext);
+
+
     const handleLoginForm = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
+        // console.log(email,password);
+
+        loginUser(email, password)
+        .then(result=> {
+            const user = result.user;
+            console.log(user);
+            alert('user successfully login');
+            form.reset();
+        })
+        .catch(err=> {
+            console.log(err);
+        })
+
     }
 
     return (

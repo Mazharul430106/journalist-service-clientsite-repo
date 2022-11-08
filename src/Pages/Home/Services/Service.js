@@ -11,7 +11,7 @@ const Service = ({ service }) => {
                 <h2 className="card-title">{name}</h2>
                 <p>
                     {
-                        description.length > 100 ? <p>{description.slice(0, 100)}... <Link className='text-blue-400'>Read More</Link></p> : <></>
+                        description.length > 100 ? <p>{description.slice(0, 100)}...... <Link to={`/service/${_id}`} className='text-blue-400'>Read More</Link></p> : <></>
                     }
                 </p>
                 <p><span className='font-bold'>Price</span>  : {price}</p>
