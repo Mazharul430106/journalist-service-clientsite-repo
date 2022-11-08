@@ -1,4 +1,3 @@
-import { Result } from 'postcss';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
@@ -8,9 +7,7 @@ import './Login.css';
 
 const Login = () => {
     useTitle('Login');
-
     const {loginUser} = useContext(AuthContext);
-
 
     const handleLoginForm = event => {
         event.preventDefault();
