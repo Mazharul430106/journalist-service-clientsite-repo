@@ -32,6 +32,10 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input type="submit" className="btn btn-primary" value="Login" />
                             </div>
+                            <div className='flex justify-between my-4'>
+                                <h1>Create a New Account</h1>
+                                <Link className='text-red-400' to='/register' >Please Register</Link>
+                            </div>
                         </form>
                     </div>
                 </div>
