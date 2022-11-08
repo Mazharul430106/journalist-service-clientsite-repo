@@ -7,12 +7,20 @@ import './Login.css';
 const Login = () => {
     useTitle('Login');
 
+    const handleLoginForm = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password);
+    }
+
     return (
         <div className='mb-10'>
             <div className="hero my-10">
-                <div className="hero-content flex-col lg:flex-row">
+                <div className="hero-content form_width flex-col lg:flex-row">
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleLoginForm} className="card-body">
                             <h1 className='text-center text-4xl font-semibold'>Login Now</h1>
                             <div className="form-control">
                                 <label className="label">

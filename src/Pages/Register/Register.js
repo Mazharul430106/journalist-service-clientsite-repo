@@ -3,12 +3,24 @@ import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 
 const Register = () => {
+
+    const handleRegisterForm = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const userPhoto = form.img.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, userPhoto, email, password);
+    }
+
+
     return (
         <div className='mb-10'>
             <div className="hero my-8">
-                <div className="hero-content flex-col lg:flex-row">
+                <div className="hero-content form_width flex-col lg:flex-row">
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleRegisterForm} className="card-body">
                             <h1 className='text-center text-4xl font-semibold'>Register Now</h1>
                             <div className="form-control">
                                 <label className="label">
