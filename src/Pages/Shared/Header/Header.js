@@ -4,9 +4,8 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
-
     const {user, logoutUser} = useContext(AuthContext);
-    console.log(user);
+    
     const handleLogoutUser = ()=> {
         logoutUser()
         .then(()=>{})
@@ -48,7 +47,7 @@ const Header = () => {
                     <li><Link> <FaUserAlt></FaUserAlt> </Link> </li>
                 </>
             }
-            
+
         </>
 
     </>

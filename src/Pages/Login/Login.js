@@ -1,7 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import Footer from '../Shared/Footer/Footer';
@@ -11,6 +11,11 @@ const Login = () => {
     useTitle('Login');
     const {loginUser, providerLogin} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
 
     const handleLoginForm = event => {
         event.preventDefault();
@@ -25,6 +30,7 @@ const Login = () => {
             console.log(user);
             alert('user successfully login');
             form.reset();
+            navigate(from, { replace: true });
         })
         .catch(err=> {
             console.log(err);
