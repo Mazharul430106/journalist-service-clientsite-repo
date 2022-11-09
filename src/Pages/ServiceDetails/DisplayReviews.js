@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const DisplayReviews = ({review}) => {
-    console.log(review)
+
+    // console.log(review)
     const {user} = useContext(AuthContext);
     const { userName, userReview, service } = review;
 
