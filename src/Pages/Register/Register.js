@@ -5,13 +5,13 @@ import Footer from '../Shared/Footer/Footer';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
 
     const handleRegisterForm = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const userPhoto = form.img.value;
+        const userPhoto = form.url.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -19,15 +19,29 @@ const Register = () => {
         .then(result=> {
             const user = result.user;
             console.log(user);
+            handleUpdateUserProfile(name, userPhoto);
             form.reset();
         })
         .catch(error=> {
             console.log(error);
         })
 
-
         // console.log(name, userPhoto, email, password);
     }
+
+
+    const handleUpdateUserProfile = (name, userPhoto)=> {
+        const profile = {
+            displayName : name,
+            photoURL : userPhoto
+        }
+        updateUserProfile(profile)
+        .then(() => {})
+        .catch(err=> {
+            console.log(err);
+        })
+    }
+    
 
 
     return (
@@ -41,25 +55,25 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" name='name' placeholder="name" className="input input-bordered" />
+                                <input type="text" name='name' placeholder="name" className="input input-bordered" required/>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Url</span>
                                 </label>
-                                <input type="text" name='img' placeholder="Img_Url" className="input input-bordered" />
+                                <input type="text" name='url' placeholder="Img_Url" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
@@ -82,3 +96,4 @@ const Register = () => {
 };
 
 export default Register;
+

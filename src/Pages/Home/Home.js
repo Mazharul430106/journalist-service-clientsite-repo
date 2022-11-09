@@ -8,7 +8,7 @@ const Home = () => {
     useTitle('Home');
 
     return (
-        <div>
+        <div className='mb-10'>
            <Slider></Slider>
            <Services></Services>
            <Footer></Footer>

@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { FaBeer, FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
 
     const {user, logoutUser} = useContext(AuthContext);
-
+    console.log(user);
     const handleLogoutUser = ()=> {
         logoutUser()
         .then(()=>{})
@@ -21,9 +22,9 @@ const Header = () => {
 
         <>
             {
-                user?.email ? 
+                user?.displayName ? 
                 <>
-                   <li><Link>{user?.email}</Link></li> 
+                   <li><Link>{user?.displayName}</Link></li> 
                    <li><Link onClick={handleLogoutUser} >Logout</Link></li>
                 </> 
                 :
@@ -32,6 +33,22 @@ const Header = () => {
                     <li><Link to='/login'>Login</Link></li>
                 </>
             }
+        </>
+        
+        <>
+            {
+                user?.photoURL ? 
+                <>
+                    <li>
+                        <img src={user?.photoURL} alt="" style={{width: '60px'}} />
+                    </li>
+                </>
+                :
+                <>
+                    <li><Link> <FaUserAlt></FaUserAlt> </Link> </li>
+                </>
+            }
+        
         </>
 
     </>
