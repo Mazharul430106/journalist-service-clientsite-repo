@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
-import { FaBeer, FaUserAlt } from 'react-icons/fa';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
 
@@ -34,13 +34,13 @@ const Header = () => {
                 </>
             }
         </>
-        
+
         <>
             {
                 user?.photoURL ? 
                 <>
                     <li>
-                        <img src={user?.photoURL} alt="" style={{width: '60px'}} />
+                        <img src={user?.photoURL} alt="" style={{width: '60px'}}/>
                     </li>
                 </>
                 :
@@ -48,7 +48,7 @@ const Header = () => {
                     <li><Link> <FaUserAlt></FaUserAlt> </Link> </li>
                 </>
             }
-        
+            
         </>
 
     </>

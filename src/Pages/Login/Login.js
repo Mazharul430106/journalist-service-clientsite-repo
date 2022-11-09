@@ -1,4 +1,6 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
@@ -7,7 +9,8 @@ import './Login.css';
 
 const Login = () => {
     useTitle('Login');
-    const {loginUser} = useContext(AuthContext);
+    const {loginUser, providerLogin} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleLoginForm = event => {
         event.preventDefault();
@@ -26,7 +29,15 @@ const Login = () => {
         .catch(err=> {
             console.log(err);
         })
+    }
 
+    const handleSignInGoogle = ()=>{
+        providerLogin(googleProvider)
+        .then(result=>{
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error=> console.log(error));
     }
 
     return (
@@ -52,10 +63,12 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" className="btn btn-primary" value="Login" />
+                                <input type="submit" className="btn btn-primary " value="Login" />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login With Google</button>
+                                <button onClick={handleSignInGoogle} className="btn btn-primary">
+                                    <span> <FcGoogle className='mr-1 text-sm'></FcGoogle></span> Login With Google
+                                </button>
                             </div>
                             <div className='flex justify-between my-4'>
                                 <h1>Create a New Account</h1>
