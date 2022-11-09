@@ -6,6 +6,7 @@ import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import DisplayReviews from "../../Pages/ServiceDetails/DisplayReviews";
 import MyReviews from "../../Pages/ServiceDetails/MyReviews";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
@@ -47,8 +48,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/myreviews',
-                element:<MyReviews></MyReviews>
+                element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
             },
+            
             {
                 path: '/addreview/:id',
                 element: <AddReview></AddReview>,
