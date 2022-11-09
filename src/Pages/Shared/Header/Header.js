@@ -5,7 +5,7 @@ import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
     const {user, logoutUser} = useContext(AuthContext);
-    
+
     const handleLogoutUser = ()=> {
         logoutUser()
         .then(()=>{})
@@ -16,14 +16,14 @@ const Header = () => {
 
     const menuItems = <>
         <li><Link to='/home'>Home</Link></li>
-        <li><Link to='/service'>Services</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
 
         <>
             {
-                user?.displayName ? 
+                user?.uid ? 
                 <>
-                   <li><Link>{user?.displayName}</Link></li> 
+                   <li><Link to='/service'>My Services</Link></li>
+                   <li><Link to='/myreviews'>My Reviews</Link></li>
                    <li><Link onClick={handleLogoutUser} >Logout</Link></li>
                 </> 
                 :
