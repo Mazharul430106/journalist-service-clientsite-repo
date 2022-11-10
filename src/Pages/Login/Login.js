@@ -7,7 +7,9 @@ import useTitle from '../../Hooks/useTitle';
 import Footer from '../Shared/Footer/Footer';
 import './Login.css';
 
+
 const Login = () => {
+
     useTitle('Login');
     const { loginUser, providerLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
@@ -28,7 +30,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                alert('user successfully login');
+               
+                // alert('user successfully login');
                 form.reset();
                 navigate(from, { replace: true });
             })
@@ -88,7 +91,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-
             <Footer></Footer>
         </div>
     );

@@ -16,6 +16,7 @@ const Register = () => {
         createUser(email, password)
         .then(result=> {
             const user = result.user;
+            alert('Registation Successfully');
             console.log(user);
             handleUpdateUserProfile(name, userPhoto);
             form.reset();

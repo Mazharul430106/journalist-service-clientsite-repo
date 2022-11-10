@@ -13,9 +13,9 @@ const AboutPage = () => {
 
                     </div>
                     <div className='w-full'>
-                        <h1 className="text-5xl font-bold"> Elena Curse</h1>
+                        <h1 className="text-5xl font-bold"> Elena Cruse</h1>
                         <p className="py-6">Hay I am a Journalist of Usa . and i am working in BBC News, Here we will discuss: who journalists are and what they do; why people become journalists; and what qualities you need to be a good journalist.</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button className="btn btn-primary text-white">Get Started</button>
                     </div>
                 </div>
             </div>

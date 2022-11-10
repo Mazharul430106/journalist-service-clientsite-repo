@@ -6,17 +6,20 @@ const Footer = () => {
         <footer className="footer p-10 mt-10 bg-base-300 text-base-content">
             <div>
                 <span className="footer-title">Services</span>
-                <Link className="link link-hover">Branding</Link>
-                <Link className="link link-hover">Design</Link>
-                <Link className="link link-hover">Marketing</Link>
-                <Link className="link link-hover">Advertisement</Link>
+                <Link className="link link-hover">News Collections</Link>
+                <Link className="link link-hover">Writing News</Link>
+                <Link className="link link-hover">Sending News for Tv Center</Link>
+                <Link className="link link-hover">News Brodcasting</Link>
+                <Link className="link link-hover">Update News</Link>
+                <Link className="link link-hover">Veryfy News</Link>
             </div>
             <div>
                 <span className="footer-title">Company</span>
-                <Link className="link link-hover">About us</Link>
-                <Link className="link link-hover">Contact</Link>
-                <Link className="link link-hover">Jobs</Link>
-                <Link className="link link-hover">Press kit</Link>
+                <Link className="link link-hover">BBC News</Link>
+                <Link className="link link-hover">News 24</Link>
+                <Link className="link link-hover">Somoy News</Link>
+                <Link className="link link-hover">ATN Bangla</Link>
+                <Link className="link link-hover">Independente News</Link>
             </div>
             <div>
                 <span className="footer-title">Social</span>

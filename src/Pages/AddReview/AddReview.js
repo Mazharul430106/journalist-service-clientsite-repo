@@ -50,7 +50,7 @@ const AddReview = () => {
                 <div className='grid grid-cols-1 gap-3'>
                     <div>
                         <label htmlFor="name">Name</label>
-                        <input type="text" name='fristName' placeholder="Frist Name" defaultValue={user?.displayName} className="input input-bordered input-primary w-full" required />
+                        <input type="text" name='fristName' placeholder="Frist Name" defaultValue={user?.displayName} className="input input-bordered input-primary w-full" readOnly />
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
@@ -58,7 +58,7 @@ const AddReview = () => {
                     </div>
                     <div>
                         <label htmlFor="review">Review</label>
-                        <textarea name='review' style={{ height: '250px', resize: 'none' }} className="textarea textarea-primary w-full mt-3" placeholder="Review"></textarea>
+                        <textarea name='review' style={{ height: '250px', resize: 'none' }} className="textarea textarea-primary w-full mt-3" placeholder="Review" required></textarea>
                     </div>
                 </div>
                 <input type="submit" className='btn btn-primary mt-2 text-white' value="Add Review" />

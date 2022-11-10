@@ -22,7 +22,8 @@ const Header = () => {
             {
                 user?.uid ? 
                 <>
-                   <li><Link to='/service'>My Services</Link></li>
+                   <li><Link to='/addService'>Add Services</Link></li>
+                   <li><Link to='/service'>Services</Link></li>
                    <li><Link to='/myreviews'>My Reviews</Link></li>
                    <li><Link onClick={handleLogoutUser} >Logout</Link></li>
                 </> 

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
-const DisplayReviews = ({review, handleDeleteReview}) => {
+const DisplayReviews = ({review, handleDeleteReview, handleUpdateReview}) => {
     // console.log(review)
     const {user} = useContext(AuthContext);
     const { userName, userReview, service, _id } = review;
@@ -39,7 +39,7 @@ const DisplayReviews = ({review, handleDeleteReview}) => {
                 {userReview}
             </td>
             <td>
-                <button className='btn btn-primary'>update</button>
+                <button onClick={()=>handleUpdateReview(_id)} className='btn btn-primary'>update</button>
             </td>
             <th>
                 <button onClick={()=>handleDeleteReview(_id)} className='btn btn-primary'>Delete</button>

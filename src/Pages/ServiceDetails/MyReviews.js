@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import DisplayReviews from './DisplayReviews';
 
 const MyReviews = () => {
     useTitle('My Reviews');
+    const {user} = useContext(AuthContext);
     const [reviews, setReviews]= useState([]);
     useEffect(()=>{
-        fetch('https://jurnalist-service-server-site.vercel.app/reviews')
+        fetch(`https://jurnalist-service-server-site.vercel.app/reviews?email=${user?.email}`)
         .then(res=> res.json())
         .then(data=> setReviews(data))
-    },[])
+    },[user?.email])
 
     const handleDeleteReview = (id)=>{
         const agree = window.confirm('Are You Sure Delete ?');
         if(agree){
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://jurnalist-service-server-site.vercel.app/reviews/${id}`, {
                 method: 'DELETE' 
             })
             .then(res=> res.json())
@@ -27,6 +29,18 @@ const MyReviews = () => {
             });
         }
     }
+
+    // const handleUpdateReview = (id)=>{
+    //     fetch(`http://localhost:5000/reviews/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type' : 'application/json'
+    //         },
+    //         body: JSON.stringify()
+
+    //     })
+        
+    // }
 
 
     return (
@@ -49,6 +63,7 @@ const MyReviews = () => {
                                 key={review._id}
                                 review={review}
                                 handleDeleteReview={handleDeleteReview}
+                                // handleUpdateReview={handleUpdateReview}
                             >    
                              </DisplayReviews>)
                       }
