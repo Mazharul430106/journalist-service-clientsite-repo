@@ -7,7 +7,6 @@ import DisplayAllService from './DisplayAllService';
 const AllServicesData = () => {
     useTitle('My Services');
     const allService = useLoaderData();
-    
     return (
         <div>
             <div>

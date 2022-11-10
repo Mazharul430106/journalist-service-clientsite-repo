@@ -4,9 +4,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import Footer from '../Shared/Footer/Footer';
 
 const Register = () => {
-
     const {createUser, updateUserProfile} = useContext(AuthContext);
-
     const handleRegisterForm = event => {
         event.preventDefault();
         const form = event.target;
@@ -29,7 +27,6 @@ const Register = () => {
         // console.log(name, userPhoto, email, password);
     }
 
-
     const handleUpdateUserProfile = (name, userPhoto)=> {
         const profile = {
             displayName : name,
@@ -42,8 +39,6 @@ const Register = () => {
         })
     }
     
-
-
     return (
         <div className='mb-10'>
             <div className="hero my-8">

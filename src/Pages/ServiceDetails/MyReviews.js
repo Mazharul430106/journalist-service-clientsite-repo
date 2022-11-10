@@ -6,12 +6,29 @@ const MyReviews = () => {
     useTitle('My Reviews');
     const [reviews, setReviews]= useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/reviews')
+        fetch('https://jurnalist-service-server-site.vercel.app/reviews')
         .then(res=> res.json())
         .then(data=> setReviews(data))
     },[])
 
-  
+    const handleDeleteReview = (id)=>{
+        const agree = window.confirm('Are You Sure Delete ?');
+        if(agree){
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE' 
+            })
+            .then(res=> res.json())
+            .then(data=> {
+                if(data.deletedCount > 0){
+                    alert('Review Successfully Deleted');
+                    const reminingReviews = reviews.filter(review=> review._id !== id);
+                    setReviews(reminingReviews);
+                }
+            });
+        }
+    }
+
+
     return (
         <div className='mt-10'>
             <h1 className='text-5xl text-center my-7'> My Reviews</h1>
@@ -28,7 +45,12 @@ const MyReviews = () => {
                     </thead>
                     <tbody>
                       {
-                        reviews?.map(review=> <DisplayReviews key={review._id} review={review}></DisplayReviews>)
+                        reviews?.map(review=> <DisplayReviews 
+                                key={review._id}
+                                review={review}
+                                handleDeleteReview={handleDeleteReview}
+                            >    
+                             </DisplayReviews>)
                       }
                     </tbody>
 

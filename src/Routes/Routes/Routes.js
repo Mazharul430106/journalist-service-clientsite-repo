@@ -6,7 +6,6 @@ import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
-import DisplayReviews from "../../Pages/ServiceDetails/DisplayReviews";
 import MyReviews from "../../Pages/ServiceDetails/MyReviews";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
@@ -39,12 +38,12 @@ export const router = createBrowserRouter([
             {
                 path: '/service',
                 element: <PrivateRoutes><AllServicesData></AllServicesData></PrivateRoutes>,
-                loader: ()=> fetch('http://localhost:5000/services')
+                loader: ()=> fetch('https://jurnalist-service-server-site.vercel.app/services')
             },
             {
                 path: '/service/:id',
                 element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>,
-                loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=> fetch(`https://jurnalist-service-server-site.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myreviews',
@@ -54,7 +53,7 @@ export const router = createBrowserRouter([
             {
                 path: '/addreview/:id',
                 element: <AddReview></AddReview>,
-                loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=> fetch(`https://jurnalist-service-server-site.vercel.app/services/${params.id}`)
             }
             
         ]

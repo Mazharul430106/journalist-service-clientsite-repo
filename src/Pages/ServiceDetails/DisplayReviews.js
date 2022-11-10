@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
-const DisplayReviews = ({review}) => {
-
+const DisplayReviews = ({review, handleDeleteReview}) => {
     // console.log(review)
     const {user} = useContext(AuthContext);
-    const { userName, userReview, service } = review;
-
+    const { userName, userReview, service, _id } = review;
     const [reviewService, setReviewService] = useState({});
-    
+
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://jurnalist-service-server-site.vercel.app/services/${service}`)
         .then(res=> res.json())
         .then(data=> setReviewService(data))
     },[service])
@@ -44,7 +42,7 @@ const DisplayReviews = ({review}) => {
                 <button className='btn btn-primary'>update</button>
             </td>
             <th>
-                <button className='btn btn-primary'>Delete</button>
+                <button onClick={()=>handleDeleteReview(_id)} className='btn btn-primary'>Delete</button>
             </th>
         </tr>
     )
