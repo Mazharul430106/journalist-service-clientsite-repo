@@ -43,25 +43,25 @@ const AddService = () => {
                             <label className="label">
                                 <span className="label-text">Image Url</span>
                             </label>
-                            <input type="text" name='url' placeholder="Img_Url" className="input input-bordered" />
+                            <input type="text" name='url' placeholder="Img_Url" className="input input-bordered" required/>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Service Name</span>
                             </label>
-                            <input type="text" name='service_name' placeholder="Service Name" className="input input-bordered" />
+                            <input type="text" name='service_name' placeholder="Service Name" className="input input-bordered" required/>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Desc</span>
                             </label>
-                            <input type="text" name='service_desc' placeholder="Service Des..." className="input input-bordered" />
+                            <input type="text" name='service_desc' placeholder="Service Des..." className="input input-bordered" required/>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="number" name='price' placeholder="Price" className="input input-bordered" />
+                            <input type="number" name='price' placeholder="Price" className="input input-bordered" required/>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Add Service</button>
