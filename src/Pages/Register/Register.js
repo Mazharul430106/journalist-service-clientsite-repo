@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
-import Footer from '../Shared/Footer/Footer';
 
 const Register = () => {
     const {createUser, updateUserProfile} = useContext(AuthContext);
@@ -79,14 +78,14 @@ const Register = () => {
                             </div>
                             <div className='flex my-4 justify-between'> 
                                 <p> All Ready Have An Account </p>
-                                <Link to='/login' className='text-red-400'> Please Login</Link> 
+                                <Link to='/login' className='text-primary'> Please Login</Link> 
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <Footer></Footer>
+          
         </div>
     );
 };

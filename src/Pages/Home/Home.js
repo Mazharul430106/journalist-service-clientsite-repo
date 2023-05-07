@@ -1,10 +1,10 @@
 import React from 'react';
 import useTitle from '../../Hooks/useTitle';
-import Footer from '../Shared/Footer/Footer';
 import AboutPage from './AboutPage/AboutPage';
 import Contact from './Contact/Contact';
 import Services from './Services/Services';
 import Slider from './Slider/Slider';
+import Newsletter from '../Newsletter/Newsletter';
 
 const Home = () => {
     useTitle('Home');
@@ -14,8 +14,8 @@ const Home = () => {
            <Slider></Slider>
            <Services></Services>
            <AboutPage></AboutPage>
+           <Newsletter></Newsletter>
            <Contact></Contact>
-           <Footer></Footer>
         </div>
     );
 };

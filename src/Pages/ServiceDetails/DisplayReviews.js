@@ -39,10 +39,10 @@ const DisplayReviews = ({review, handleDeleteReview, handleUpdateReview}) => {
                 {userReview}
             </td>
             <td>
-                <button onClick={()=>handleUpdateReview(_id)} className='btn btn-primary'>update</button>
+                <button onClick={()=>handleUpdateReview(_id)} className='btn btn-primary rounded-sm lg:max-w-[180px] w-full text-white'>update</button>
             </td>
             <th>
-                <button onClick={()=>handleDeleteReview(_id)} className='btn btn-primary'>Delete</button>
+                <button onClick={()=>handleDeleteReview(_id)} className='btn btn-primary rounded-sm lg:max-w-[180px] w-full text-white'>Delete</button>
             </th>
         </tr>
     )

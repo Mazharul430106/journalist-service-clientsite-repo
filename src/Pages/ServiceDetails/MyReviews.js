@@ -44,8 +44,8 @@ const MyReviews = () => {
 
 
     return (
-        <div className='mt-10'>
-            <h1 className='text-5xl text-center my-7'> My Reviews</h1>
+        <div className='mt-10 mt-14 px-[5%]'>
+            <h1 className='text-5xl text-center pb-10 font-semibold'> My Reviews</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
@@ -63,7 +63,7 @@ const MyReviews = () => {
                                 key={review._id}
                                 review={review}
                                 handleDeleteReview={handleDeleteReview}
-                                // handleUpdateReview={handleUpdateReview}
+                                
                             >    
                              </DisplayReviews>)
                       }

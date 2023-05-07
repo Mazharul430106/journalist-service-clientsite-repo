@@ -4,7 +4,6 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
-import Footer from '../Shared/Footer/Footer';
 import './Login.css';
 
 
@@ -84,14 +83,14 @@ const Login = () => {
                             </div>
                             <div className=' login_text flex text-center justify-between my-4'>
                                 <h1 className='ms-3'>Create a New Account</h1>
-                                <Link className='text-red-400' to='/register' >Please Register</Link>
+                                <Link className='text-primary' to='/register' >Please Register</Link>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+         
         </div>
     );
 };
