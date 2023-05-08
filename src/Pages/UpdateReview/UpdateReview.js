@@ -12,7 +12,7 @@ const UpdateReview = () => {
 
     const handleUpdateReview = (data, event) => {
 
-        fetch(`http://localhost:5000/reviews/${singleReview._id}`, {
+        fetch(`https://jurnalist-service-server-site.vercel.app/reviews/${singleReview._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

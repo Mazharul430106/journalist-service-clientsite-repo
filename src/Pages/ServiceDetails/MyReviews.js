@@ -20,14 +20,12 @@ const MyReviews = () => {
         const agree = window.confirm('are you delete')
         if (agree) {
 
-            // fetch(`https://jurnalist-service-server-site.vercel.app/reviews/${id}`, {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://jurnalist-service-server-site.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        // alert('Review Successfully Deleted');
                         toast.success('Review Deleted Successfully');
                         const reminingReviews = reviews.filter(review => review._id !== id);
                         setReviews(reminingReviews);
@@ -36,7 +34,7 @@ const MyReviews = () => {
         }
     }
 
-    
+
     return (
         <div className='mt-14 px-[5%]'>
             <h1 className='text-5xl text-center pb-10 font-semibold'> My Reviews</h1>
