@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext);
@@ -25,7 +26,8 @@ const AddReview = () => {
             userReview
         }
 
-        fetch(`https://jurnalist-service-server-site.vercel.app/reviews`, {
+        // fetch(`https://jurnalist-service-server-site.vercel.app/reviews`, {
+        fetch(`http://localhost:5000/reviews`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -36,7 +38,7 @@ const AddReview = () => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('User Successfully Reviewed')
+                    toast.success('Review added Successfully')
                 }
                 form.reset();
             })
@@ -64,7 +66,7 @@ const AddReview = () => {
                         <textarea name='review' style={{ height: '250px', resize: 'none' }} className="textarea textarea-primary w-full  rounded-sm focus:outline-none" placeholder="Review" required></textarea>
                     </div>
                 </div>
-                <input type="submit" className='rounded-sm btn btn-primary mt-2 text-white' value="Add Review" />
+                <input type="submit" className='rounded-sm lg:max-w-[200px] w-full btn btn-primary mt-2 text-white' value="Add Review" />
             </form>
         </div>
     );

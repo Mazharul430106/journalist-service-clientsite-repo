@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Footer = () => {
+    const serviceDetails = useLoaderData();
+    console.log(serviceDetails)
+
     return (
         <footer className="footer p-10 mt-10 bg-base-300 text-base-content">
             <div>
