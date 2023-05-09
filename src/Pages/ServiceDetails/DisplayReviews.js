@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 const DisplayReviews = ({ review, handleDeleteReview }) => {
     // console.log(review)
     const { user } = useContext(AuthContext);
-    const { userName, review: userReview, service, _id } = review;
+    const { userName, userReview, service, _id } = review;
     const [reviewService, setReviewService] = useState({});
 
     useEffect(() => {
-        fetch(`https://jurnalist-service-server-site.vercel.app/services/${service}`)
+        fetch(`https://jurnalist-service-server-site.vercel.app/reviews/${service}`)
             .then(res => res.json())
             .then(data => setReviewService(data))
     }, [service])

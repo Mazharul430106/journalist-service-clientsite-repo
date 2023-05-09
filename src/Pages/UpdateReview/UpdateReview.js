@@ -7,11 +7,11 @@ import { toast } from 'react-hot-toast';
 const UpdateReview = () => {
     const { user } = useContext(AuthContext);
     const singleReview = useLoaderData();
-    // console.log(singleReview);
+    console.log(singleReview);
     const { register, handleSubmit } = useForm()
 
     const handleUpdateReview = (data, event) => {
-
+        
         fetch(`https://jurnalist-service-server-site.vercel.app/reviews/${singleReview._id}`, {
             method: 'PATCH',
             headers: {
@@ -49,7 +49,7 @@ const UpdateReview = () => {
 
                     <div className='mt-2'>
                         <label htmlFor="review">Review</label>
-                        <textarea  {...register('review', { required: true })} name='review' style={{ height: '250px', resize: 'none' }} defaultValue={singleReview?.review} className="textarea textarea-primary w-full  rounded-sm focus:outline-none" placeholder="Review" required></textarea>
+                        <textarea  {...register('userReview', { required: true })} name='userReview' style={{ height: '250px', resize: 'none' }} defaultValue={singleReview?.review} className="textarea textarea-primary w-full  rounded-sm focus:outline-none" placeholder="Review" required></textarea>
                     </div>
                 </div>
                 <input type="submit" className='rounded-sm lg:max-w-[200px] w-full btn btn-primary mt-2 text-white' value="Update Review" />
