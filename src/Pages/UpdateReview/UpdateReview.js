@@ -49,7 +49,7 @@ const UpdateReview = () => {
 
                     <div className='mt-2'>
                         <label htmlFor="review">Review</label>
-                        <textarea  {...register('userReview', { required: true })} name='userReview' style={{ height: '250px', resize: 'none' }} defaultValue={singleReview?.review} className="textarea textarea-primary w-full  rounded-sm focus:outline-none" placeholder="Review" required></textarea>
+                        <textarea  {...register('userReview', { required: true })} name='userReview' style={{ height: '250px', resize: 'none' }} defaultValue={singleReview?.userReview} className="textarea textarea-primary w-full  rounded-sm focus:outline-none" placeholder="Review" required></textarea>
                     </div>
                 </div>
                 <input type="submit" className='rounded-sm lg:max-w-[200px] w-full btn btn-primary mt-2 text-white' value="Update Review" />
